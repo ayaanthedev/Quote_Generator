@@ -1,23 +1,78 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quote Display</title>
+    <title>Modern Quote Display</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <nav>
-        <h1>Quote Generator</h1>
-    </nav>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>QuoteStudio</h1>
+            </div>
+            <nav>
+                <a href="#" class="active">Home</a>
+                <a href="#">About</a>
+            </nav>
+        </div>
+    </header>
+
     <main>
-        <div id="quote">Click the button to get a quote!</div>
-        <button id="quotebtn">Get Quote</button>
-        <p id="loading" style="display: none;">Loading...</p>
+        <div class="hero">
+            <div class="container">
+                <h2 class="hero-title">Unleash Your <span class="gradient-text">Inspiration</span> with Powerful Quotes</h2>
+                <p class="hero-subtitle">Elevate your mindset with our curated collection of quotes, designed to inspire, educate, and empower your journey.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">Quotes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Access</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote-section">
+            <div class="container">
+                <div class="quote-card">
+                    <div id="quote-content">Click the button to get an inspiring quote!</div>
+                    <div id="loading">
+                        <div class="loading-spinner"></div>
+                        <div class="loading-text">Finding wisdom...</div>
+                    </div>
+                    <button id="quotebtn">Get Random Quote</button>
+                </div>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon icon-random"></div>
+                        <h3>Random Quotes</h3>
+                        <p>Discover new perspectives with our random quote generator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 QuoteStudio. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
-
 </html>

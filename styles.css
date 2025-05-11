@@ -1,0 +1,109 @@
+:root {
+  --bg-color: #fcf7ff;
+  --primary-color: #c4cad0;
+  --secondary-color: #878c8f;
+  --accent-color: #ff0055;
+  --highlight-color: #00aaff;
+  --text-color-dark: #121212;
+  --text-color-light: #ffffff;
+  --text-color-muted: #b3b3b3;
+  --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2);
+  --border-radius: 16px;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+nav {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+nav h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-color-dark);
+  letter-spacing: 1px;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#quote {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--secondary-color);
+  color: var(--text-color-light);
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#quote:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+button {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
+  color: var(--text-color-light);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: var(--card-shadow-hover);
+}
+
+#loading {
+  font-size: 1rem;
+  color: var(--text-color-muted);
+  margin-top: 1rem;
+  animation: fadeIn 1.5s infinite;
+}
+
+@keyframes fadeIn {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}

@@ -47,6 +47,15 @@ body {
   line-height: 1.6;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--gray-300);
+  border-radius: 10px;
+  height: 2px;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;

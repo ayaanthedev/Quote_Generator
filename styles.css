@@ -344,19 +344,42 @@ footer .container {
   align-items: center;
 }
 
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.footer-copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.license-text {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.license-text a {
+  color: #666;
+  text-decoration: underline;
+}
+
 .footer-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .footer-links a {
-  color: var(--gray-400);
+  color: #666;
   text-decoration: none;
-  transition: var(--transition);
+  transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: var(--white);
+  color: #333;
 }
 
 /* Responsive styles */

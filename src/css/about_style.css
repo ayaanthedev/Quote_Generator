@@ -183,6 +183,39 @@ footer .container {
   align-items: center;
 }
 
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 0;
+}
+
+.footer-copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--gray-500);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+}
+.footer-links a:hover {
+  color: var(--gray-300);
+}
+
+.footer-links a.active {
+  color: var(--gray-300);
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .about-section h2 {

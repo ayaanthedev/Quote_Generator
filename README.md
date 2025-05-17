@@ -18,13 +18,13 @@
 
 
 
-![App Screenshot](https://raw.githubusercontent.com/ayaanthedev/Quote_Generator/refs/heads/main/assets/screenshots/screenshot%201.png?token=GHSAT0AAAAAADDM5STOIAF6P5GJ47FYXXEY2BHE5LQ)
+![App Screenshot](https://raw.githubusercontent.com/ayaanthedev/Quote_Generator/refs/heads/main/assets/screenshots/screenshot%201.png)
 
-![App ScreenShot](https://raw.githubusercontent.com/ayaanthedev/Quote_Generator/refs/heads/main/assets/screenshots/screenshot%202.png?token=GHSAT0AAAAAADDM5STOGEKCQRDJLD3TEZA42BHE53Q)
+![App ScreenShot](https://raw.githubusercontent.com/ayaanthedev/Quote_Generator/refs/heads/main/assets/screenshots/screenshot%202.png)
 
-![App ScreenShot](https://raw.githubusercontent.com/ayaanthedev/Quote_Generator/refs/heads/main/assets/screenshots/screen%20shot%203.png?token=GHSAT0AAAAAADDM5STOFG2U5P3TNPH2ZG3C2BHE6OQ)
+![App ScreenShot](https://raw.githubusercontent.com/ayaanthedev/Quote_Generator/refs/heads/main/assets/screenshots/screen%20shot%203.png)
 
-![App ScreenShot](https://raw.githubusercontent.com/ayaanthedev/Quote_Generator/refs/heads/main/assets/screenshots/screen%20shot%204.png?token=GHSAT0AAAAAADDM5STOI5VG5BRTJDSA5UDU2BHE67A)
+![App ScreenShot](https://raw.githubusercontent.com/ayaanthedev/Quote_Generator/refs/heads/main/assets/screenshots/screen%20shot%204.png)
 
 
 

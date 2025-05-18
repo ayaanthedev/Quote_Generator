@@ -1,3 +1,4 @@
+
 :root {
   /* Main color palette */
   --bg-color: #f8f9fa;
@@ -19,7 +20,7 @@
   --accent-orange: #ff8d3f;
   --accent-yellow: #ffd43b;
   --accent-green: #52c41a;
-  --accent-blue: #1890ff;
+  --accent-blue: #4263eb;
   --accent-indigo: #4263eb;
   --accent-purple: #7950f2;
   
@@ -48,7 +49,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
   background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
@@ -68,7 +69,7 @@ body {
 header {
   background-color: var(--white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  padding: 1rem 0;
+  padding: 1.25rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -84,10 +85,13 @@ header .container {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-    width: 40px;
-  height: 40px;
 }
 
+.logo-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
 
 .logo h1 {
   font-size: 1.5rem;
@@ -134,15 +138,16 @@ nav a.active::after {
 
 /* Hero section */
 .hero {
-  padding: 5rem 0 3rem;
+  padding: 6rem 0 4rem;
   background: linear-gradient(180deg, var(--white) 0%, var(--gray-100) 100%);
+  margin-bottom: 3rem;
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   max-width: 800px;
 }
 
@@ -153,42 +158,67 @@ nav a.active::after {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  display: inline-block;
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: var(--gray-600);
-  max-width: 600px;
-  margin-bottom: 2.5rem;
+  max-width: 650px;
+  margin-bottom: 3rem;
+  line-height: 1.7;
 }
 
 .stats {
   display: flex;
-  gap: 4rem;
+  gap: 5rem;
   margin-bottom: 2rem;
 }
 
 .stat {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 40px;
+  width: 1px;
+  background-color: var(--gray-300);
 }
 
 .stat-number {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
   color: var(--gray-900);
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .stat-label {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--gray-600);
+  font-weight: 500;
 }
 
-/* Quote section */
-.quote-section {
-  padding: 4rem 0;
+/* Quote Cards Container */
+.quotes-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 0 auto 4rem;
+  max-width: 1200px;
+  padding: 0 2rem;
 }
 
+/* Quote Card Styles */
 .quote-card {
   background-color: var(--white);
   border-radius: var(--border-radius);
@@ -199,8 +229,7 @@ nav a.active::after {
   align-items: center;
   text-align: center;
   position: relative;
-  margin-bottom: 4rem;
-  min-height: 250px;
+  min-height: 300px;
   transition: var(--transition);
 }
 
@@ -216,6 +245,10 @@ nav a.active::after {
   font-weight: 500;
   margin-bottom: 2rem;
   width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #loading {
@@ -241,6 +274,81 @@ nav a.active::after {
   border-radius: 50%;
   animation: spin 1s ease-in-out infinite;
   margin-bottom: 1rem;
+}
+
+/* Daily Quote Section */
+#api-quote-box {
+  background: linear-gradient(135deg, var(--accent-indigo) 0%, var(--accent-purple) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+#api-quote-box::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-size: 150px;
+  opacity: 0.1;
+  font-family: Georgia, serif;
+  color: var(--white);
+}
+
+#api-quote-box::after {
+  content: '"';
+  position: absolute;
+  bottom: -80px;
+  right: 20px;
+  font-size: 150px;
+  opacity: 0.1;
+  font-family: Georgia, serif;
+  color: var(--white);
+}
+
+#api-quote-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+#quote-h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  color: var(--white);
+}
+
+#quote-h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--white);
+  border-radius: 3px;
+}
+
+#daily-quote {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#api-quote-author {
+  font-style: italic;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-top: 1rem;
+  display: block;
 }
 
 @keyframes spin {
@@ -276,21 +384,49 @@ nav a.active::after {
 }
 
 /* Features section */
+.features-section {
+  padding: 4rem 0;
+  background-color: var(--gray-100);
+  margin-top: 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--gray-600);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .features {
   display: grid;
-  grid-template-columns: 1fr;
-  max-width: 400px;
-  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .feature {
   background-color: var(--white);
   border-radius: var(--border-radius);
-  padding: 2rem;
+  padding: 2.5rem;
   box-shadow: var(--card-shadow);
   text-align: center;
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .feature:hover {
@@ -299,8 +435,8 @@ nav a.active::after {
 }
 
 .feature-icon {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin: 0 auto 1.5rem;
   display: flex;
@@ -321,21 +457,23 @@ nav a.active::after {
 }
 
 .feature h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
   color: var(--gray-900);
 }
 
 .feature p {
   color: var(--gray-600);
-  font-size: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 /* Footer */
 footer {
   background-color: var(--gray-900);
   color: var(--gray-400);
-  padding: 2rem 0;
+  padding: 3rem 0;
+  margin-top: 5rem;
 }
 
 footer .container {
@@ -360,12 +498,17 @@ footer .container {
 
 .license-text {
   font-size: 0.875rem;
-  color: #666;
+  color: var(--gray-500);
 }
 
 .license-text a {
-  color: #666;
+  color: var(--gray-500);
   text-decoration: underline;
+  transition: var(--transition);
+}
+
+.license-text a:hover {
+  color: var(--gray-300);
 }
 
 .footer-links {
@@ -376,8 +519,9 @@ footer .container {
 .footer-links a {
   color: var(--gray-500);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: var(--transition);
   position: relative;
+  padding: 0.25rem 0;
 }
 
 .footer-links a:hover {
@@ -388,44 +532,75 @@ footer .container {
   color: var(--gray-300);
 }
 
-
+.footer-links a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--gray-300);
+}
 
 /* Responsive styles */
+@media (max-width: 1100px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .quotes-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 992px) {
   .features {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
   
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
   }
   
   .stats {
-    gap: 2rem;
+    gap: 3rem;
+  }
+  
+  .stat:not(:last-child)::after {
+    right: -1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
   
   .hero-subtitle {
     font-size: 1.1rem;
   }
   
-  #quote-content {
-    font-size: 1.5rem;
+  #quote-content, #daily-quote {
+    font-size: 1.35rem;
   }
   
   .stats {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
   }
   
-  footer .container {
+  .stat:not(:last-child)::after {
+    display: none;
+  }
+  
+  .quote-card {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .footer-content {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 }
 
@@ -435,10 +610,33 @@ footer .container {
   }
   
   .quote-card {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.25rem;
   }
   
   .hero {
-    padding: 3rem 0 2rem;
+    padding: 4rem 0 3rem;
   }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  footer .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .footer-copyright {
+    text-align: center;
+  }
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
 }

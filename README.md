@@ -15,7 +15,9 @@
 
 ## 📸 Screenshots
 
+<details>
 
+<summary>Screenshots</summary>
 
 
 ![App Screenshot](https://raw.githubusercontent.com/ayaanthedev/Quote_Generator/refs/heads/main/assets/screenshots/screenshot%201.png)
@@ -25,6 +27,13 @@
 ![App ScreenShot](https://raw.githubusercontent.com/ayaanthedev/Quote_Generator/refs/heads/main/assets/screenshots/screen%20shot%203.png)
 
 ![App ScreenShot](https://raw.githubusercontent.com/ayaanthedev/Quote_Generator/refs/heads/main/assets/screenshots/screen%20shot%204.png)
+
+</details>
+
+
+
+
+
 
 
 

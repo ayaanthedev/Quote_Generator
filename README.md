@@ -56,7 +56,7 @@
 
 
 [![github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ayaanthedev)
-[![Quotes Api]((https://img.shields.io/static/v1?label=API&message=used&color=blue))](https://github.com/well300/quotes-api)
+[![Quotes Api](https://img.shields.io/static/v1?label=API&message=used&color=blue)](https://github.com/well300/quotes-api)
 ## 👨‍💻 Author
 
 - [@AyaanTheDev](https://www.github.com/ayaanthedev)

@@ -39,7 +39,8 @@ function displayQuote(data) {
   if (container) {
     container.innerHTML = `
       <div>"${data.quote}"</div>
-      <div style="margin-top: 1rem; color: #FFF9B0 ; font-style: italic;">— ${data.author}</div>
+      <div style="margin-top: 1rem; color: #FFF9B0 ;
+       font-style: italic;">— ${data.author}</div>
     `;
   }
 }

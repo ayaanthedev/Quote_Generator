@@ -3,12 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
     <title>WisdomGenerator - Generate Insightful Wisdom and Quotes</title>
@@ -36,10 +30,10 @@
     <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     
-
     <link rel="stylesheet" href="/src/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Structured Data / Schema Markup -->
     <script type="application/ld+json">
@@ -58,33 +52,29 @@
       }
     }
     </script>
-    <link rel="stylesheet" href="/src/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
                 <div class="logo-icon">
-                    <img src="../favicon.svg" alt="Logo" class="logo">
+                    <img src="../favicon.svg" alt="WisdomGenerator Logo">
                 </div>
                 <h1>WisdomGenerator</h1>
             </div>
             <nav>
                 <a href="#" class="active">Home</a>
                 <a href="about.html">About</a>
+                <a href="#features">Features</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <div class="hero">
+        <section class="hero">
             <div class="container">
                 <h2 class="hero-title">Unleash Your <span class="gradient-text">Inspiration</span> with Powerful Quotes</h2>
-                <p class="hero-subtitle">Elevate your mindset with our curated collection of quotes, designed to inspire, educate, and empower your journey.</p>
+                <p class="hero-subtitle">Elevate your mindset with our curated collection of quotes, designed to inspire, educate, and empower your journey through life's challenges and triumphs.</p>
                 <div class="stats">
                     <div class="stat">
                         <span class="stat-number">200+</span>
@@ -94,29 +84,52 @@
                         <span class="stat-number">24/7</span>
                         <span class="stat-label">Access</span>
                     </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free</span>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <div class="quotes-container">
+            <div class="quote-card">
+                <div id="quote-content">Click the button to get an inspiring quote!</div>
+                <div id="loading">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Finding wisdom...</div>
+                </div>
+                <button id="quotebtn">Get Random Quote</button>
+            </div>
+
+            <!-- Quote of the Day with updated design -->
+            <div id="api-quote-box" class="quote-card">
+                <h3 id="quote-h1">Quote Of The Day</h3>
+                <div id="daily-quote"></div>
             </div>
         </div>
 
-        <div class="quote-section">
-            <div class="container">
-                <div class="quote-card">
-                    <div id="quote-content">Click the button to get an inspiring quote!</div>
-                    <div id="loading">
-                        <div class="loading-spinner"></div>
-                        <div class="loading-text">Finding wisdom...</div>
-                    </div>
-                    <button id="quotebtn">Get Random Quote</button>
-                </div>
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-icon icon-random"></div>
-                        <h3>Random Quotes</h3>
-                        <p>Discover new perspectives with our random quote generator</p>
-                    </div>
-                </div>
+        <section id="features" class="features-section">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="gradient-text">Features</span></h2>
+                <p class="section-subtitle">Discover all the ways WisdomGenerator can inspire your daily life</p>
             </div>
-        </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon icon-random">
+                        <!-- Icon SVG or content would go here -->
+                    </div>
+                    <h3>Random Quotes</h3>
+                    <p>Discover new perspectives with our diverse selection of inspirational quotes from great thinkers and leaders throughout history.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon icon-category">
+                        <!-- Icon SVG or content would go here -->
+                    </div>
+                    <h3>Daily Wisdom</h3>
+                    <p>Start each day with a fresh quote designed to motivate and provide a new outlook on life's challenges and opportunities.</p>
+                </div>
+        </section>
     </main>
 
     <footer>

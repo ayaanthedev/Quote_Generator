@@ -42,7 +42,7 @@ function getDailyQuote() {
       authorElem.style.display = 'block';
       authorElem.style.marginTop = '1rem';
       authorElem.style.fontSize = '1.1rem';
-      authorElem.style.color = 'var(--gray-600)';
+      authorElem.style.color = '#DFF3E4';
       authorElem.style.fontStyle = 'italic';
 
       dailyQuoteDiv.innerHTML = '';

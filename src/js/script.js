@@ -7,19 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-function getDailyQuote() {
-  const today = new Date().toISOString().split('T')[0]; // '2025-05-18'
-
-  const stored = localStorage.getItem('daily-quote');
-  const storedDate = localStorage.getItem('quote-date');
-
-  if (stored && storedDate === today) {
-    displayQuote(JSON.parse(stored));
-    return;
-  }
 
   // Fetch a new one and store it for the day
-  fetch('https://quotes-api-self.vercel.app/quote')
+  fetch('https://quotes-api-dev.vercel.app/quote')
     .then(response => response.json())
     .then(data => {
       localStorage.setItem('daily-quote', JSON.stringify(data));
@@ -29,22 +19,41 @@ function getDailyQuote() {
     .catch(error => {
       console.error('Error fetching daily quote:', error);
     });
+
+
+
+
+function getDailyQuote() {
+  const dailyQuoteDiv = document.getElementById('daily-quote');
+  dailyQuoteDiv.textContent = 'Loading...';
+
+  fetch('https://quotes-api-dev.vercel.app/quoteoftheday')
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.json();
+    })
+    .then(data => {
+      // Assuming the API returns { quote: "...", author: "..." }
+      const quoteElem = document.createElement('div');
+      quoteElem.textContent = `"${data.quote}"`;
+
+      const authorElem = document.createElement('span');
+      authorElem.textContent = `— ${data.author}`;
+      authorElem.style.display = 'block';
+      authorElem.style.marginTop = '1rem';
+      authorElem.style.fontSize = '1.1rem';
+      authorElem.style.color = 'var(--gray-600)';
+      authorElem.style.fontStyle = 'italic';
+
+      dailyQuoteDiv.innerHTML = '';
+      dailyQuoteDiv.appendChild(quoteElem);
+      dailyQuoteDiv.appendChild(authorElem);
+    })
+    .catch(error => {
+      dailyQuoteDiv.textContent = 'Could not load the quote of the day.';
+      console.error('Error fetching quote of the day:', error);
+    });
 }
-
-function displayQuote(data) {
-  console.log("Quote of the Day:", data.quote, "—", data.author);
-
-  // Optionally update DOM here
-  const container = document.getElementById('daily-quote');
-  if (container) {
-    container.innerHTML = `
-      <div>"${data.quote}"</div>
-      <div style="margin-top: 1rem; color: #FFF9B0 ;
-       font-style: italic;">— ${data.author}</div>
-    `;
-  }
-}
-
 
 
 

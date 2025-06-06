@@ -135,3 +135,45 @@ function setupQuoteButton() {
     button.click();
   }, 500);
 }
+
+
+// Fixed scroll arrow functionality for centered positioning
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollArrow = document.querySelector('.scroll-arrow');
+    
+    if (!scrollArrow) {
+        console.error('Scroll arrow not found!');
+        return;
+    }
+    
+    scrollArrow.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const quotesContainer = document.querySelector('.quotes-container');
+        
+        if (quotesContainer) {
+            // Calculate the center position of the quotes container
+            const rect = quotesContainer.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Calculate target position (center of quotes container minus half viewport height)
+            const containerCenter = rect.top + scrollTop + (rect.height / 2);
+            const viewportCenter = window.innerHeight / 2;
+            const targetPosition = containerCenter - viewportCenter;
+            
+            // Add some offset to position it nicely
+            const finalPosition = Math.max(0, targetPosition + 50);
+            
+            window.scrollTo({
+                top: finalPosition,
+                behavior: 'smooth'
+            });
+            
+            console.log('Scrolling to centered position:', finalPosition);
+        } else {
+            console.error('Quotes container not found!');
+        }
+    });
+    
+    console.log('Centered scroll arrow event listener added');
+});

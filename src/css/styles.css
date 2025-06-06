@@ -229,6 +229,49 @@ nav a.active::after {
     font-weight: 500;
 }
 
+.scroll-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    animation: bounce 2s infinite;
+}
+
+.arrow-icon {
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+    transition: var(--transition);
+}
+
+.arrow-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gray-600);
+}
+
+.scroll-arrow:hover {
+    transform: translateY(5px);
+}
+
+.scroll-arrow:hover .arrow-icon {
+    color: var(--accent-purple);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+
 /* Quote Cards Container */
 .quotes-container {
     display: grid;
@@ -237,6 +280,8 @@ nav a.active::after {
     margin: 0 auto 4rem;
     max-width: 1200px;
     padding: 0 2rem;
+    scroll-margin-top: 20vh;
+    padding-top: 2rem;
 }
 
 /* Quote Card Styles */
@@ -643,6 +688,13 @@ footer .container {
     .footer-content {
         flex-direction: column;
         gap: 1.5rem;
+    }
+        .scroll-arrow {
+        margin-top: 1.5rem;
+    }
+    
+    .arrow-text {
+        font-size: 0.8rem;
     }
 }
 
